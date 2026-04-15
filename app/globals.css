@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-0: #050507;
+  --bg-1: #0c0c10;
+  --bg-2: #121218;
+  --bg-3: #1a1a24;
+  --bg-4: #24243a;
+
+  --tx-1: #f4f4f8;
+  --tx-2: #a8a8c0;
+  --tx-3: #6b6b88;
+
+  --green: #10b981;
+  --green-d: #059669;
+  --green-l: #34d399;
+  --green-bg: rgba(16, 185, 129, 0.08);
+  --green-bg2: rgba(16, 185, 129, 0.15);
+
+  --red: #ef4444;
+  --blue: #3b82f6;
+  --amber: #f59e0b;
+  --purple: #8b5cf6;
+
+  --border: rgba(255, 255, 255, 0.06);
+  --border-h: rgba(255, 255, 255, 0.12);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --radius-xs: 6px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background: var(--bg-0);
+  color: var(--tx-1);
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar { width: 0; height: 0; }
+input, textarea, button { font-family: inherit; }
+input::placeholder, textarea::placeholder { color: var(--tx-3); }
+
+/* Animations */
+@keyframes up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideR { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+
+.a-up { animation: up 0.35s ease-out both; }
+.a-fade { animation: fadeIn 0.3s ease-out both; }
+.a-slide-r { animation: slideR 0.3s cubic-bezier(0.4, 0, 0.2, 1) both; }
+.a-scale { animation: scaleIn 0.25s ease-out both; }
+
+.no-scroll { overflow: hidden; }
+.hide-sb { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-sb::-webkit-scrollbar { display: none; }
